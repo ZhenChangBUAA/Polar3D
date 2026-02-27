@@ -106,7 +106,7 @@ class BaseDataset(Dataset):
 
     def _load_shape_from_occupancy_or_sdf(self, index: int) -> Dict[str, Any]:
         if self.cfg.geo_data_type == "sdf":
-            data = np.load(f"{self.cfg.npz_dir}/{self.uids[index]}/samples.npz")
+            data = np.load(f"{self.cfg.npz_dir}/{self.uids[index]}.npz")
             # for input point cloud
             surface = data["surface"]
             if self.cfg.with_sharp_data:
